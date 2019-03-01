@@ -57,6 +57,19 @@ with open(csvpath, newline='') as csv_file:
     print(f'Greatest Increase in Profits: {maxmonth} (${max_change})')
     print(f'Greatest Decrease in Profits: {minmonth} (${min_change})')
 
+outpath = os.path.join("pybanktest.txt")
+
+with open(outpath,'w',newline='') as textfile:
+    csv_writer = csv.writer(textfile, delimiter=',')
+
+    csv_writer.writerow([f'Financial Analysis'])
+    csv_writer.writerow([f'------------------------------------------------------------------'])
+    csv_writer.writerow([f'Total Months: {total_months}'])
+    csv_writer.writerow([f'Total: ${total_profitloss}'])
+    csv_writer.writerow([f'Average Changes: ${average_changes}'])
+    csv_writer.writerow([f'Greatest Increase in Profits: {maxmonth} (${max_change})'])
+    csv_writer.writerow([f'Greatest Decrease in Profits: {minmonth} (${min_change})'])
+
 
 
 

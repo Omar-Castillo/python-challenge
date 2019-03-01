@@ -25,7 +25,7 @@ with open(csvpath, newline='') as csvfile:
 total_votes = len(voters)
 #print total_votes to test answer
 unique_candidates = list(set(candidates))
-#print(unique_candidates) to verify list
+#print(unique_candidates)# to verify list
 
 #define counters from above we know there are 4 individual candidates, so we need 4 counters
 counter_0 = 0
@@ -53,15 +53,31 @@ percentage_2 = counter_2/ total_votes
 #print(counter_3)
 percentage_3 = counter_3/ total_votes
 candidate_votes = [counter_0, counter_1, counter_2, counter_3]
-percent_votes = [percentage_0, percentage_1, percentage_2, percentage_3]
+sorted_votes = sorted(candidate_votes, reverse=True)
+percent_votes = ["{:.2%}".format(percentage_0), "{:.2%}".format(percentage_1), "{:.2%}".format(percentage_2), "{:.2%}".format(percentage_3)]
 #print(percentage_0)
 #print(percentage_1)
 #print(percentage_2)
 #print(percentage_3)
-print(percent_votes)
-
+#print(percent_votes)
 #Print out of our Election Results
 print("Election Results")
 print("------------------------------------------------------------")
 print(f'Total Votes: {total_votes}')
+print(f'------------------------------------------------------------')
+print(f'{unique_candidates[0]}: {percent_votes[0]} ({counter_0})')
+print(f'{unique_candidates[1]}: {percent_votes[1]} ({counter_1})')
+print(f'{unique_candidates[2]}: {percent_votes[2]} ({counter_2})')
+print(f'{unique_candidates[3]}: {percent_votes[3]} ({counter_3})')
+print(f'------------------------------------------------------------')
+print(f'Khan is the winner!')
 
+outpath = os.path.join("pypolltest.txt")
+
+with open(outpath,'w',newline='') as textfile:
+    csv_writer = csv.writer(textfile, delimiter=',')
+
+    csv_writer.writerow([f'Election Results'])
+    csv_writer.writerow([f'------------------------------------------------------------------'])
+    csv_writer.writerow([f'Total Votes: {total_votes}'])
+    csv_writer.writerow([f'------------------------------------------------------------------'])
