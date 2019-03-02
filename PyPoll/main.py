@@ -81,3 +81,10 @@ with open(outpath,'w',newline='') as textfile:
     csv_writer.writerow([f'------------------------------------------------------------------'])
     csv_writer.writerow([f'Total Votes: {total_votes}'])
     csv_writer.writerow([f'------------------------------------------------------------------'])
+    csv_writer.writerow([f'{unique_candidates[0]}: {percent_votes[0]} ({counter_0})'])
+    csv_writer.writerow([f'{unique_candidates[1]}: {percent_votes[1]} ({counter_1})'])
+    csv_writer.writerow([f'{unique_candidates[2]}: {percent_votes[2]} ({counter_2})'])
+    csv_writer.writerow([f'{unique_candidates[3]}: {percent_votes[3]} ({counter_3})'])
+    csv_writer.writerow([f'------------------------------------------------------------------'])
+    csv_writer.writerow([f'Khan is the winner'])
+    
