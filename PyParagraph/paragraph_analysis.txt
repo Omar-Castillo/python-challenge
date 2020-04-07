@@ -1,0 +1,6 @@
+Paragraph Analysis
+-------------------
+Approximate Total Words: 130
+Approximate Sentence Count: 5
+Average Letter Count: 6.407692307692308
+Average Words Per Sentence: 26.0
