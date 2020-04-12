@@ -71,7 +71,7 @@ us_state_abbrev = {
 
 #improved reading using CSV module
 
-with open(csv_file,newline='') as csvfile:
+with open(csv_file) as csvfile:
 
     #CSV reader specifies delimter and variable that holds content
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -116,7 +116,8 @@ with open(csv_file,newline='') as csvfile:
     #zip lists together 
     cleaned_csv = zip(employee_id,first_name,last_name,dob,ssn,state)
 
-    with open(file_output, "w") as final_file:
+    #write all of the election data to csv
+    with open(file_output, "w", newline='') as final_file:
         writer = csv.writer(final_file)
 
         #write the header row
